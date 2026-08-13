@@ -13,12 +13,7 @@
 
 <title>JS-INNOVATECH | Tecnologia e Inovação</title>
 
-
 <style>
-
-/* =========================================================
-RESET
-========================================================= */
 
 *{
     margin:0;
@@ -31,14 +26,16 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#05070d;
     color:#fff;
     overflow-x:hidden;
 }
 
 button,
-input{
+input,
+select,
+textarea{
     font-family:inherit;
 }
 
@@ -71,46 +68,29 @@ TOPO
 
 
 /* =========================================================
-HEADER — ESTILO SAMSUNG / DARK
+HEADER
 ========================================================= */
 
 header{
     height:72px;
-
     background:#05070d;
-
     padding:0 5%;
-
     display:flex;
     align-items:center;
-
     gap:24px;
-
     position:sticky;
     top:0;
-
     z-index:3000;
-
     border-bottom:1px solid #151a25;
 }
 
-
-/* =========================================================
-LOGO
-========================================================= */
-
 .logo{
     font-size:23px;
-
     font-weight:bold;
-
     white-space:nowrap;
-
     display:flex;
     align-items:center;
-
     line-height:1;
-
     letter-spacing:-.5px;
 }
 
@@ -125,34 +105,21 @@ PESQUISA
 
 .pesquisa{
     flex:1;
-
     max-width:650px;
-
     position:relative;
-
     margin-left:auto;
 }
 
 .pesquisa input{
     width:100%;
-
     height:44px;
-
     padding:0 55px 0 18px;
-
     border:1px solid #202b3c;
-
     outline:none;
-
     border-radius:24px;
-
     background:#111722;
-
     color:#fff;
-
     font-size:14px;
-
-    transition:.2s;
 }
 
 .pesquisa input::placeholder{
@@ -161,39 +128,21 @@ PESQUISA
 
 .pesquisa input:focus{
     border-color:#00aaff;
-
-    box-shadow:
-        0 0 0 2px rgba(0,170,255,.08);
 }
-
-
-/* =========================================================
-BOTÃO PESQUISA
-========================================================= */
 
 .pesquisa button{
     position:absolute;
-
     right:0;
     top:0;
-
     width:48px;
     height:44px;
-
     border:0;
-
     background:transparent;
-
     color:#fff;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
-    transition:.2s;
 }
 
 .pesquisa button:hover{
@@ -202,108 +151,54 @@ BOTÃO PESQUISA
 
 
 /* =========================================================
-SVG DOS ÍCONES
+ÍCONES
 ========================================================= */
 
 .pesquisa button svg,
 .header-icon svg,
-.menu svg{
+.menu svg,
+.conta-botao svg{
     width:27px;
     height:27px;
-
     fill:none;
-
     stroke:currentColor;
-
     stroke-width:1.7;
-
     stroke-linecap:round;
-
     stroke-linejoin:round;
 }
 
-
-/* =========================================================
-ÍCONE CONTA / HEADER
-========================================================= */
-
 .header-icons{
     display:flex;
-
     align-items:center;
-
     gap:6px;
-
     height:50px;
 }
 
 .header-icon{
     width:48px;
     height:48px;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     color:#fff;
-
     cursor:pointer;
-
     border-radius:50%;
-
-    transition:.2s;
-
-    position:relative;
 }
 
-.header-icon:hover{
-    color:#00aaff;
-
-    background:#111722;
-}
-
-
-/* =========================================================
-MENU HAMBÚRGUER
-========================================================= */
-
-.menu{
-    width:48px;
-    height:48px;
-
-    border:0;
-
-    background:transparent;
-
-    color:#fff;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    flex-shrink:0;
-
-    transition:.2s;
-}
-
+.header-icon:hover,
+.conta-botao:hover,
 .menu:hover{
     color:#00aaff;
-
     background:#111722;
 }
 
 
 /* =========================================================
-CONTA LOGADA
+CONTA
 ========================================================= */
 
 .conta-logada{
     position:relative;
-
     display:none;
 }
 
@@ -314,71 +209,26 @@ CONTA LOGADA
 .conta-botao{
     width:48px;
     height:48px;
-
     background:transparent;
-
     border:0;
-
     color:#fff;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
-    transition:.2s;
 }
-
-.conta-botao:hover{
-    color:#00aaff;
-
-    background:#111722;
-}
-
-.conta-botao svg{
-    width:27px;
-    height:27px;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.7;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-}
-
-
-/* =========================================================
-PAINEL DA CONTA
-========================================================= */
 
 .conta-painel{
     display:none;
-
     position:absolute;
-
     top:58px;
-
     right:0;
-
     width:300px;
-
     background:#0b0f18;
-
     border:1px solid #00aaff;
-
     border-radius:14px;
-
     padding:22px;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.7);
-
+    box-shadow:0 15px 50px rgba(0,0,0,.7);
     z-index:6000;
 }
 
@@ -388,39 +238,32 @@ PAINEL DA CONTA
 
 .conta-cabecalho{
     text-align:center;
-
     padding-bottom:18px;
-
     border-bottom:1px solid #202b3c;
-
     margin-bottom:18px;
+}
+
+.conta-avatar,
+.menu-avatar,
+.login-icon{
+    border-radius:50%;
+    background:#003d66;
+    border:1px solid #00aaff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .conta-avatar{
     width:65px;
     height:65px;
-
     margin:0 auto 10px;
-
-    border-radius:50%;
-
-    background:#003d66;
-
-    border:1px solid #00aaff;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
     font-size:30px;
 }
 
 .conta-status{
     color:#00aaff;
-
     font-size:12px;
-
     margin-top:5px;
 }
 
@@ -430,84 +273,61 @@ PAINEL DA CONTA
 
 .dado-conta small{
     display:block;
-
     color:#778293;
-
     margin-bottom:5px;
 }
 
 .dado-conta span{
     display:block;
-
     background:#111722;
-
     border:1px solid #202b3c;
-
     border-radius:7px;
-
     padding:10px;
-
     color:#fff;
-
     font-size:13px;
-
     word-break:break-word;
 }
 
 .botao-sair{
     width:100%;
-
     padding:11px;
-
     border:none;
-
     border-radius:7px;
-
     background:#d93030;
-
     color:#fff;
-
     font-weight:bold;
-}
-
-.botao-sair:hover{
-    background:#b92323;
 }
 
 
 /* =========================================================
-MENU LATERAL
+MENU
 ========================================================= */
+
+.menu{
+    width:48px;
+    height:48px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
 .menu-dropdown{
     position:fixed;
-
     top:0;
     left:0;
-
     width:390px;
     max-width:100vw;
-
     height:100vh;
-
     background:#0b0f18;
-
     border-right:1px solid #00aaff;
-
-    padding:0;
-
-    display:block;
-
     transform:translateX(-105%);
-
-    transition:
-        transform .3s ease;
-
-    box-shadow:
-        15px 0 50px rgba(0,0,0,.65);
-
+    transition:.3s;
+    box-shadow:15px 0 50px rgba(0,0,0,.65);
     overflow-y:auto;
-
     z-index:9000;
 }
 
@@ -515,36 +335,21 @@ MENU LATERAL
     transform:translateX(0);
 }
 
-
-/* =========================================================
-CABEÇALHO MENU
-========================================================= */
-
 .menu-mobile-top{
     min-height:90px;
-
     background:#05070d;
-
     border-bottom:1px solid #202b3c;
-
     padding:20px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     position:sticky;
-
     top:0;
-
     z-index:5;
 }
 
 .menu-mobile-logo{
     font-size:21px;
-
     font-weight:bold;
 }
 
@@ -555,152 +360,80 @@ CABEÇALHO MENU
 .menu-fechar{
     width:42px;
     height:42px;
-
     border:1px solid #263347;
-
     background:#111722;
-
     color:#fff;
-
     border-radius:8px;
-
     font-size:28px;
-
-    line-height:1;
-
-    transition:.2s;
 }
-
-.menu-fechar:hover{
-    border-color:#00aaff;
-
-    color:#00aaff;
-}
-
-
-/* =========================================================
-CONTA NO MENU
-========================================================= */
 
 .menu-conta{
     padding:25px 20px 18px;
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
     background:#0b0f18;
-
     border-bottom:1px solid #202b3c;
 }
 
 .menu-avatar{
     width:62px;
     height:62px;
-
     flex-shrink:0;
-
-    border-radius:50%;
-
-    background:#003d66;
-
-    border:1px solid #00aaff;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
     font-size:30px;
 }
 
 .menu-conta-texto{
     display:flex;
-
     flex-direction:column;
-
     gap:5px;
 }
 
 .menu-conta-texto strong{
     font-size:19px;
-
-    color:#fff;
 }
 
 .menu-conta-texto span{
     color:#8994a5;
-
     font-size:13px;
-
     line-height:1.45;
 }
 
-
-/* =========================================================
-BOTÕES CONTA
-========================================================= */
-
 .menu-conta-botoes{
     display:flex;
-
     gap:8px;
-
     padding:15px 20px 22px;
-
     background:#0b0f18;
-
     border-bottom:8px solid #05070d;
 }
 
 .menu-conta-botoes button{
     flex:1;
-
     min-height:45px;
-
     border-radius:7px;
-
     font-size:14px;
-
     font-weight:bold;
-
-    transition:.2s;
 }
 
 .menu-btn-entrar{
     border:none;
-
     background:#00aaff;
-
     color:#fff;
-}
-
-.menu-btn-entrar:hover{
-    background:#008dcc;
 }
 
 .menu-btn-cadastro{
     background:#111722;
-
     border:1px solid #00aaff;
-
     color:#00aaff;
 }
 
-.menu-btn-cadastro:hover{
-    background:#003d66;
+.menu-itens,
+.menu-secao,
+.menu-admin-area{
+    background:#0b0f18;
 }
 
-
-/* =========================================================
-ITENS MENU
-========================================================= */
-
 .menu-itens{
-    background:#0b0f18;
-
     border-bottom:8px solid #05070d;
 }
 
@@ -708,136 +441,67 @@ ITENS MENU
 .menu-secao a,
 .menu-admin-area a{
     min-height:64px;
-
     display:flex;
-
     align-items:center;
-
     gap:17px;
-
     padding:0 22px;
-
     text-decoration:none;
-
     color:#c1cad6;
-
     font-size:16px;
-
     border-bottom:1px solid #171e2b;
-
-    transition:.2s;
 }
 
 .menu-itens a:hover,
 .menu-secao a:hover,
 .menu-admin-area a:hover{
     background:#111722;
-
     color:#00aaff;
 }
 
 .menu-item-icon{
     width:28px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:23px;
-
-    flex-shrink:0;
 }
 
-
-/* =========================================================
-CATEGORIAS MENU
-========================================================= */
-
 .menu-secao{
-    background:#0b0f18;
-
     border-bottom:8px solid #05070d;
-
     padding-bottom:10px;
 }
 
 .menu-secao-titulo{
     padding:22px;
-
     font-size:18px;
-
     font-weight:bold;
-
-    color:#fff;
-
     border-bottom:1px solid #202b3c;
 }
 
-.menu-admin-area{
-    background:#0b0f18;
-
-    padding-bottom:30px;
-}
-
 
 /* =========================================================
-OVERLAY
-========================================================= */
-
-.menu-dropdown::after{
-    content:"";
-
-    position:fixed;
-
-    top:0;
-
-    left:390px;
-
-    width:100vw;
-
-    height:100vh;
-
-    background:rgba(0,0,0,.60);
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-INFO BAR
+INFO
 ========================================================= */
 
 .info-bar{
     background:#080c14;
-
     padding:12px 5%;
-
     display:flex;
-
     gap:30px;
-
     align-items:center;
-
     border-bottom:1px solid #171e2b;
-
     font-size:13px;
-
     overflow-x:auto;
-
     white-space:nowrap;
 }
 
 .info-item{
     color:#aeb7c5;
-
     flex-shrink:0;
 }
 
 .info-item span{
     color:#00aaff;
-
     font-weight:bold;
 }
 
@@ -848,56 +512,30 @@ HERO
 
 .hero{
     padding:35px 6%;
-
-    background:
-        radial-gradient(
-            circle at 85% 40%,
-            #003d66,
-            #05070d 55%
-        );
+    background:radial-gradient(circle at 85% 40%,#003d66,#05070d 55%);
 }
 
 .hero-carousel{
     position:relative;
-
     overflow:hidden;
-
     border-radius:18px;
 }
 
 .hero-slides{
     display:flex;
-
     transition:transform .6s ease;
-
-    will-change:transform;
 }
 
 .hero-box{
     min-width:100%;
-
     min-height:430px;
-
     border:1px solid #12354b;
-
     border-radius:18px;
-
     padding:55px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            100deg,
-            rgba(0,170,255,.10),
-            rgba(5,7,13,.8)
-        );
+    background:linear-gradient(100deg,rgba(0,170,255,.10),rgba(5,7,13,.8));
 }
 
 .hero-text{
@@ -906,21 +544,15 @@ HERO
 
 .hero-small{
     color:#00aaff;
-
     font-size:13px;
-
     font-weight:bold;
-
     letter-spacing:3px;
-
     margin-bottom:18px;
 }
 
 .hero h1{
     font-size:50px;
-
     line-height:1.1;
-
     margin-bottom:20px;
 }
 
@@ -930,72 +562,5432 @@ HERO
 
 .hero p{
     color:#aeb7c5;
-
     font-size:17px;
-
     line-height:1.7;
+}
 
-    max-width:600px;
+.hero-button,
+.fornecedor-btn,
+.card-button,
+.banner a,
+.whatsapp{
+    background:#00aaff;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 .hero-button{
     display:inline-block;
-
     margin-top:28px;
-
     padding:15px 26px;
-
     border-radius:8px;
-
-    background:#00aaff;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.hero-button:hover{
-    transform:translateY(-3px);
-
-    background:#008dcc;
 }
 
 .hero-icon{
     width:240px;
     height:240px;
-
     border:1px solid #00aaff;
-
     border-radius:25px;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     font-size:90px;
-
     background:rgba(0,170,255,.06);
-
-    box-shadow:
-        0 0 60px rgba(0,170,255,.15);
-
     flex-shrink:0;
 }
+
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:44px;
+    border:1px solid #00aaff;
+    border-radius:50%;
+    background:rgba(0,0,0,.55);
+    color:#fff;
+    font-size:29px;
+    z-index:10;
+}
+
+.carousel-prev{
+    left:18px;
+}
+
+.carousel-next{
+    right:18px;
+}
+
+.hero-dots{
+    position:absolute;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:9px;
+    z-index:20;
+}
+
+.hero-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#526070;
+    cursor:pointer;
+}
+
+.hero-dot.active{
+    width:28px;
+    border-radius:10px;
+    background:#00aaff;
+}
+
+
+/* =========================================================
+CATEGORIAS
+========================================================= */
+
+.categorias{
+    padding:35px 6%;
+}
+
+.categorias-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+}
+
+.categorias-title h2{
+    font-size:25px;
+}
+
+.categorias-title a{
+    color:#00aaff;
+    text-decoration:none;
+}
+
+.categorias-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.categoria{
+    background:#0b0f18;
+    border:1px solid #171e2b;
+    border-radius:12px;
+    padding:25px 15px;
+    text-align:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.categoria:hover{
+    border-color:#00aaff;
+    transform:translateY(-4px);
+}
+
+.categoria-icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+FORNECEDOR
+========================================================= */
+
+.fornecedor{
+    padding:15px 6% 45px;
+}
+
+.fornecedor-box{
+    border:1px solid #00aaff;
+    background:radial-gradient(circle at 85% 30%,rgba(0,170,255,.20),transparent 35%),#0b0f18;
+    border-radius:16px;
+    padding:32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.fornecedor-tag{
+    color:#00aaff;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.fornecedor h2{
+    font-size:29px;
+    margin-bottom:10px;
+}
+
+.fornecedor p{
+    color:#9da8b8;
+    line-height:1.6;
+    max-width:800px;
+}
+
+.fornecedor-lista{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:18px;
+}
+
+.fornecedor-lista span{
+    background:#111722;
+    border:1px solid #202b3c;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:12px;
+    color:#c7d0dc;
+}
+
+.fornecedor-btn{
+    flex-shrink:0;
+    padding:14px 22px;
+    border-radius:8px;
+}
+
+
+/* =========================================================
+SERVIÇOS
+========================================================= */
+
+.destaques{
+    padding:45px 6%;
+}
+
+.section-header{
+    margin-bottom:25px;
+}
+
+.section-header small,
+.sobre small,
+.contato-header small{
+    color:#00aaff;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.section-header h2{
+    font-size:30px;
+    margin-top:8px;
+}
+
+.section-header p{
+    color:#8994a5;
+    margin-top:8px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#0b0f18;
+    border:1px solid #171e2b;
+    border-radius:14px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#00aaff;
+}
+
+.card-image{
+    height:160px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:60px;
+    background:radial-gradient(circle,#003d66,#080c14);
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content small{
+    color:#00aaff;
+    font-weight:bold;
+}
+
+.card-content h3{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.card-content p{
+    color:#8994a5;
+    line-height:1.5;
+    font-size:14px;
+}
+
+.card-button{
+    display:block;
+    margin-top:18px;
+    padding:11px;
+    text-align:center;
+    border-radius:7px;
+}
+
+
+/* =========================================================
+BANNER
+========================================================= */
+
+.banner{
+    margin:20px 6% 50px;
+    padding:35px 45px;
+    border-radius:15px;
+    border:1px solid #12354b;
+    background:linear-gradient(90deg,#003d66,#080c14);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.banner h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.banner p{
+    color:#aeb7c5;
+}
+
+.banner strong{
+    color:#00aaff;
+}
+
+.banner a{
+    padding:14px 24px;
+    border-radius:8px;
+}
+
+
+/* =========================================================
+SOBRE
+========================================================= */
+
+.sobre{
+    background:#080c14;
+    padding:75px 6%;
+}
+
+.sobre-content{
+    max-width:900px;
+}
+
+.sobre h2{
+    font-size:40px;
+    margin:15px 0 20px;
+}
+
+.sobre h2 span{
+    color:#00aaff;
+}
+
+.sobre p{
+    color:#9ca7b7;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.cnpj-sobre{
+    margin-top:20px;
+    color:#00aaff !important;
+    font-size:15px !important;
+}
+
+
+/* =========================================================
+CONTATO
+========================================================= */
+
+.contato{
+    padding:75px 6%;
+}
+
+.contato-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.contato-header h2{
+    font-size:38px;
+    margin:12px 0;
+}
+
+.contato-header p{
+    color:#8994a5;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    background:#0b0f18;
+    border:1px solid #171e2b;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+}
+
+.contact-icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.contact-card p{
+    color:#8994a5;
+}
+
+.whatsapp{
+    display:block;
+    width:max-content;
+    margin:35px auto 0;
+    padding:16px 30px;
+    border-radius:8px;
+}
+
+
+/* =========================================================
+LOGIN
+========================================================= */
+
+.login-modal,
+.admin-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:7000;
+}
+
+.login-modal{
+    background:rgba(0,0,0,.82);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.login-modal.active{
+    display:flex;
+}
+
+.login-box{
+    width:100%;
+    max-width:430px;
+    max-height:90vh;
+    overflow:auto;
+    background:#0b0f18;
+    border:1px solid #00aaff;
+    border-radius:16px;
+    padding:32px;
+    position:relative;
+}
+
+.login-close{
+    position:absolute;
+    right:15px;
+    top:10px;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:30px;
+}
+
+.login-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 15px;
+    font-size:35px;
+}
+
+.login-box h2{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.login-box > p{
+    text-align:center;
+    color:#8994a5;
+    margin-bottom:25px;
+}
+
+.login-box label{
+    display:block;
+    margin:15px 0 7px;
+    color:#aeb7c5;
+}
+
+.login-box input,
+.login-box select,
+.login-box textarea,
+.admin-section input,
+.admin-section select,
+.admin-section textarea{
+    width:100%;
+    padding:13px;
+    border-radius:8px;
+    border:1px solid #202b3c;
+    background:#111722;
+    color:#fff;
+    outline:none;
+}
+
+.login-button{
+    width:100%;
+    margin-top:22px;
+    padding:14px;
+    border:0;
+    border-radius:8px;
+    background:#00aaff;
+    color:#fff;
+    font-weight:bold;
+}
+
+.cadastro-link{
+    display:block;
+    text-align:center;
+    margin-top:18px;
+    color:#00aaff;
+    cursor:pointer;
+}
+
+.login-mensagem{
+    display:none;
+    text-align:center;
+    margin-top:15px;
+    padding:10px;
+    border-radius:7px;
+    font-size:13px;
+}
+
+.login-mensagem.erro{
+    display:block;
+    background:#421b1b;
+    color:#ff7b7b;
+}
+
+.login-mensagem.sucesso{
+    display:block;
+    background:#123b28;
+    color:#65e69a;
+}
+
+
+/* =========================================================
+ÁREA DO CLIENTE
+========================================================= */
+
+.cliente-area{
+    display:none;
+    background:#05070d;
+    border-top:1px solid #171e2b;
+}
+
+.cliente-area.ativa{
+    display:block;
+}
+
+.cliente-container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 6%;
+}
+
+.cliente-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.cliente-header small{
+    color:#00aaff;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.cliente-header h2{
+    font-size:32px;
+    margin-top:8px;
+}
+
+.cliente-header p{
+    color:#8994a5;
+    margin-top:7px;
+}
+
+.cliente-atualizar{
+    border:1px solid #00aaff;
+    background:#111722;
+    color:#00aaff;
+    padding:11px 17px;
+    border-radius:8px;
+}
+
+.aparelho-card{
+    background:#0b0f18;
+    border:1px solid #202b3c;
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.aparelho-topo{
+    padding:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    border-bottom:1px solid #202b3c;
+}
+
+.aparelho-identificacao{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.aparelho-icone{
+    width:60px;
+    height:60px;
+    border-radius:12px;
+    background:#003d66;
+    border:1px solid #00aaff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+
+.aparelho-identificacao h3{
+    font-size:20px;
+}
+
+.aparelho-identificacao p{
+    color:#8994a5;
+    margin-top:5px;
+}
+
+.status-badge{
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    background:#123b28;
+    color:#65e69a;
+    border:1px solid #65e69a;
+}
+
+.aparelho-info{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    padding:20px;
+}
+
+.info-card{
+    background:#111722;
+    border:1px solid #202b3c;
+    border-radius:9px;
+    padding:14px;
+}
+
+.info-card small{
+    color:#778293;
+    display:block;
+    margin-bottom:6px;
+}
+
+.info-card strong{
+    font-size:14px;
+}
+
+.timeline{
+    padding:20px;
+    border-top:1px solid #202b3c;
+}
+
+.timeline h4{
+    margin-bottom:22px;
+}
+
+.timeline-list{
+    display:flex;
+    justify-content:space-between;
+    gap:5px;
+    position:relative;
+}
+
+.timeline-list::before{
+    content:"";
+    position:absolute;
+    top:18px;
+    left:5%;
+    right:5%;
+    height:3px;
+    background:#202b3c;
+    z-index:0;
+}
+
+.timeline-step{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    width:16.66%;
+}
+
+.timeline-dot{
+    width:36px;
+    height:36px;
+    margin:auto;
+    border-radius:50%;
+    background:#111722;
+    border:2px solid #39475a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+}
+
+.timeline-step.ativo .timeline-dot,
+.timeline-step.concluido .timeline-dot{
+    background:#003d66;
+    border-color:#00aaff;
+}
+
+.timeline-step.concluido .timeline-dot{
+    background:#123b28;
+    border-color:#65e69a;
+}
+
+.timeline-step span{
+    display:block;
+    color:#778293;
+    font-size:11px;
+    margin-top:9px;
+    line-height:1.3;
+}
+
+.timeline-step.ativo span{
+    color:#00aaff;
+    font-weight:bold;
+}
+
+.timeline-step.concluido span{
+    color:#65e69a;
+}
+
+.aparelho-observacao{
+    padding:20px;
+    border-top:1px solid #202b3c;
+}
+
+.aparelho-observacao strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.aparelho-observacao p{
+    color:#aeb7c5;
+    line-height:1.6;
+}
+
+.entrega-area{
+    padding:20px;
+    border-top:1px solid #202b3c;
+}
+
+.entrega-area h4{
+    margin-bottom:8px;
+}
+
+.entrega-area p{
+    color:#8994a5;
+    margin-bottom:15px;
+}
+
+.entrega-opcoes{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.entrega-btn{
+    padding:13px 18px;
+    border-radius:8px;
+    border:1px solid #263347;
+    background:#111722;
+    color:#fff;
+}
+
+.entrega-btn.selecionado{
+    border-color:#00aaff;
+    background:#003d66;
+    color:#fff;
+}
+
+.entrega-confirmar{
+    margin-top:15px;
+    padding:12px 20px;
+    border:0;
+    border-radius:8px;
+    background:#00aaff;
+    color:#fff;
+    font-weight:bold;
+}
+
+.sem-aparelho{
+    padding:40px;
+    text-align:center;
+    background:#0b0f18;
+    border:1px dashed #263347;
+    border-radius:14px;
+}
+
+.sem-aparelho .icone{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.sem-aparelho p{
+    color:#8994a5;
+    margin-top:8px;
+}
+
+.cliente-ajuda{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.ajuda-card{
+    background:#0b0f18;
+    border:1px solid #202b3c;
+    border-radius:12px;
+    padding:22px;
+}
+
+.ajuda-card strong{
+    display:block;
+    margin-bottom:8px;
+}
+
+.ajuda-card p{
+    color:#8994a5;
+    line-height:1.5;
+}
+
+
+/* =========================================================
+ADMIN
+========================================================= */
+
+.admin-modal{
+    background:#05070d;
+    z-index:8000;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.admin-modal.active{
+    display:block;
+}
+
+.admin-container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.admin-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:15px 0 25px;
+    border-bottom:1px solid #202b3c;
+}
+
+.admin-top h2{
+    font-size:26px;
+}
+
+.admin-top h2 span{
+    color:#00aaff;
+}
+
+.admin-close{
+    border:1px solid #263347;
+    background:#111722;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+}
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin:25px 0;
+}
+
+.admin-stat,
+.admin-section{
+    background:#0b0f18;
+    border:1px solid #202b3c;
+    border-radius:12px;
+}
+
+.admin-stat{
+    padding:22px;
+}
+
+.admin-stat small{
+    color:#778293;
+}
+
+.admin-stat strong{
+    display:block;
+    color:#00aaff;
+    font-size:25px;
+    margin-top:8px;
+}
+
+.admin-section{
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.admin-section h3{
+    margin-bottom:10px;
+}
+
+.admin-section p{
+    color:#8994a5;
+    line-height:1.6;
+}
+
+.admin-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+}
+
+.admin-action{
+    padding:11px 16px;
+    background:#111722;
+    border:1px solid #263347;
+    border-radius:8px;
+    color:#fff;
+}
+
+.admin-action:hover{
+    border-color:#00aaff;
+    color:#00aaff;
+}
+
+.admin-form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.admin-form .campo{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.admin-form .campo.full{
+    grid-column:1/-1;
+}
+
+.admin-form label{
+    color:#aeb7c5;
+    font-size:13px;
+}
+
+.admin-form textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.admin-salvar{
+    padding:13px 20px;
+    background:#00aaff;
+    border:0;
+    border-radius:8px;
+    color:#fff;
+    font-weight:bold;
+}
+
+.aparelho-admin{
+    background:#111722;
+    border:1px solid #202b3c;
+    border-radius:10px;
+    padding:17px;
+    margin-top:12px;
+}
+
+.aparelho-admin-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.aparelho-admin p{
+    margin-top:7px;
+}
+
+.admin-status{
+    color:#00aaff;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.admin-user{
+    padding:13px;
+    background:#111722;
+    border-radius:8px;
+    margin-top:10px;
+    color:#b7c1ce;
+    border:1px solid #202b3c;
+}
+
+
+/* =========================================================
+RODAPÉ
+========================================================= */
+
+footer{
+    background:#05070d;
+    border-top:1px solid #171e2b;
+    padding:35px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+footer p,
+.footer-cnpj{
+    color:#737d8c;
+    font-size:13px;
+}
+
+.footer-cnpj{
+    margin-top:6px;
+}
+
+
+/* =========================================================
+TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    max-width:350px;
+    background:#0b0f18;
+    border:1px solid #00aaff;
+    color:#fff;
+    padding:15px 18px;
+    border-radius:10px;
+    box-shadow:0 15px 50px rgba(0,0,0,.6);
+    transform:translateY(120px);
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:10000;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+
+/* =========================================================
+RESPONSIVO
+========================================================= */
+
+@media(max-width:1100px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categorias-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .admin-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .aparelho-info{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:850px){
+
+    header{
+        padding:0 4%;
+        gap:14px;
+    }
+
+    .hero{
+        padding:20px;
+    }
+
+    .hero-box{
+        min-height:560px;
+        padding:35px 25px;
+        flex-direction:column;
+        text-align:center;
+        justify-content:center;
+        gap:25px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-icon{
+        width:160px;
+        height:160px;
+        font-size:60px;
+    }
+
+    .fornecedor{
+        padding:10px 20px 35px;
+    }
+
+    .fornecedor-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .fornecedor-lista{
+        justify-content:center;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .banner{
+        margin:20px 20px 40px;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .cliente-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cliente-ajuda{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .topo{
+        font-size:11px;
+        padding:8px 10px;
+    }
+
+    header{
+        height:64px;
+        padding:0 10px;
+        gap:5px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .pesquisa{
+        flex:0 0 42px;
+        width:42px;
+        height:42px;
+        margin-left:auto;
+    }
+
+    .pesquisa input{
+        display:none;
+    }
+
+    .pesquisa button{
+        position:static;
+        width:42px;
+        height:42px;
+    }
+
+    .header-icons{
+        gap:2px;
+    }
+
+    .header-icon,
+    .conta-botao,
+    .menu{
+        width:42px;
+        height:42px;
+    }
+
+    .conta-painel{
+        position:fixed;
+        top:74px;
+        right:10px;
+        width:calc(100vw - 20px);
+        max-width:330px;
+    }
+
+    .menu-dropdown{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .carousel-btn{
+        width:37px;
+        height:37px;
+        font-size:24px;
+    }
+
+    .carousel-prev{
+        left:8px;
+    }
+
+    .carousel-next{
+        right:8px;
+    }
+
+    .categorias{
+        padding:30px 20px;
+    }
+
+    .categorias-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .destaques{
+        padding:35px 20px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .fornecedor-box{
+        padding:25px 18px;
+    }
+
+    .banner{
+        padding:28px 20px;
+    }
+
+    .sobre{
+        padding:60px 20px;
+    }
+
+    .sobre h2{
+        font-size:31px;
+    }
+
+    .contato{
+        padding:60px 20px;
+    }
+
+    .contato-header h2{
+        font-size:30px;
+    }
+
+    footer{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .admin-grid{
+        grid-template-columns:1fr;
+    }
+
+    .admin-top{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .admin-form{
+        grid-template-columns:1fr;
+    }
+
+    .admin-form .campo.full{
+        grid-column:auto;
+    }
+
+    .aparelho-info{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .timeline-list{
+        display:block;
+    }
+
+    .timeline-list::before{
+        top:0;
+        bottom:0;
+        left:17px;
+        width:3px;
+        height:auto;
+    }
+
+    .timeline-step{
+        width:100%;
+        display:flex;
+        align-items:center;
+        text-align:left;
+        gap:12px;
+        margin-bottom:16px;
+    }
+
+    .timeline-dot{
+        margin:0;
+        flex-shrink:0;
+    }
+
+    .timeline-step span{
+        margin-top:0;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .logo{
+        font-size:14px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .categorias-grid{
+        grid-template-columns:1fr;
+    }
+
+    .aparelho-info{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="topo">
+    Tecnologia e inovação para você
+    <span>• Atendimento profissional • Fornecimento para assistências</span>
+</div>
+
+
+<header>
+
+    <div class="logo">
+        JS<span>-INNOVATECH</span>
+    </div>
+
+
+    <div class="pesquisa">
+
+        <input
+            type="text"
+            id="campoPesquisa"
+            placeholder="Busque um serviço, peça ou solução..."
+        >
+
+        <button
+            type="button"
+            onclick="pesquisar()"
+        >
+
+            <svg viewBox="0 0 24 24">
+
+                <circle
+                    cx="10.8"
+                    cy="10.8"
+                    r="6.8"
+                ></circle>
+
+                <line
+                    x1="16"
+                    y1="16"
+                    x2="21"
+                    y2="21"
+                ></line>
+
+            </svg>
+
+        </button>
+
+    </div>
+
+
+    <div class="header-icons">
+
+        <div
+            class="header-icon"
+            id="botaoLogin"
+            onclick="abrirLogin()"
+        >
+
+            <svg viewBox="0 0 24 24">
+
+                <circle
+                    cx="12"
+                    cy="7.5"
+                    r="3.5"
+                ></circle>
+
+                <path
+                    d="M4.5 21c.8-4.1 3.3-6.2 7.5-6.2s6.7 2.1 7.5 6.2"
+                ></path>
+
+            </svg>
+
+        </div>
+
+
+        <div
+            class="conta-logada"
+            id="contaLogada"
+        >
+
+            <button
+                class="conta-botao"
+                onclick="abrirConta()"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <circle
+                        cx="12"
+                        cy="7.5"
+                        r="3.5"
+                    ></circle>
+
+                    <path
+                        d="M4.5 21c.8-4.1 3.3-6.2 7.5-6.2s6.7 2.1 7.5 6.2"
+                    ></path>
+
+                </svg>
+
+            </button>
+
+
+            <div
+                class="conta-painel"
+                id="contaPainel"
+            >
+
+                <div class="conta-cabecalho">
+
+                    <div class="conta-avatar">
+                        👤
+                    </div>
+
+                    <h3>Minha conta</h3>
+
+                    <div class="conta-status">
+                        ● Conta conectada
+                    </div>
+
+                </div>
+
+                <div class="dado-conta">
+
+                    <small>E-mail</small>
+
+                    <span id="emailUsuario">—</span>
+
+                </div>
+
+                <button
+                    class="botao-sair"
+                    onclick="sairDaConta()"
+                >
+                    Sair da conta
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="menu"
+        id="menuBotao"
+        aria-label="Abrir menu"
+    >
+
+        <svg viewBox="0 0 24 24">
+
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+
+        </svg>
+
+    </button>
+
+
+    <div
+        class="menu-dropdown"
+        id="menuDropdown"
+    >
+
+        <div class="menu-mobile-top">
+
+            <div class="menu-mobile-logo">
+                JS<span>-INNOVATECH</span>
+            </div>
+
+            <button
+                class="menu-fechar"
+                id="menuFechar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="menu-conta">
+
+            <div class="menu-avatar">
+                👤
+            </div>
+
+            <div class="menu-conta-texto">
+
+                <strong id="menuSaudacao">
+                    Bem-vindo
+                </strong>
+
+                <span id="menuContaTexto">
+                    Entre na sua conta para acessar seus serviços.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="menu-conta-botoes"
+            id="menuContaBotoes"
+        >
+
+            <button
+                class="menu-btn-entrar"
+                onclick="abrirLogin();fecharMenu()"
+            >
+                Entrar
+            </button>
+
+            <button
+                class="menu-btn-cadastro"
+                onclick="abrirLogin();fecharMenu()"
+            >
+                Crie sua conta
+            </button>
+
+        </div>
+
+
+        <div class="menu-itens">
+
+            <a href="#inicio" onclick="fecharMenu()">
+                <span class="menu-item-icon">🏠</span>
+                Início
+            </a>
+
+            <a href="#servicos" onclick="fecharMenu()">
+                <span class="menu-item-icon">🛠️</span>
+                Serviços
+            </a>
+
+            <a
+                href="#acompanhar"
+                onclick="fecharMenu();abrirAcompanhamento()"
+            >
+                <span class="menu-item-icon">📱</span>
+                Acompanhar meu aparelho
+            </a>
+
+            <a href="#fornecedor" onclick="fecharMenu()">
+                <span class="menu-item-icon">📦</span>
+                Fornecimento de peças
+            </a>
+
+            <a href="#sobre" onclick="fecharMenu()">
+                <span class="menu-item-icon">ℹ️</span>
+                Sobre nós
+            </a>
+
+            <a href="#contato" onclick="fecharMenu()">
+                <span class="menu-item-icon">📞</span>
+                Contato
+            </a>
+
+        </div>
+
+
+        <div class="menu-secao">
+
+            <div class="menu-secao-titulo">
+                Categorias
+            </div>
+
+            <a href="#servicos" onclick="fecharMenu()">
+                <span class="menu-item-icon">📱</span>
+                Celulares
+            </a>
+
+            <a href="#servicos" onclick="fecharMenu()">
+                <span class="menu-item-icon">🔋</span>
+                Baterias
+            </a>
+
+            <a href="#fornecedor" onclick="fecharMenu()">
+                <span class="menu-item-icon">🔌</span>
+                Conectores
+            </a>
+
+            <a href="#fornecedor" onclick="fecharMenu()">
+                <span class="menu-item-icon">📦</span>
+                Peças
+            </a>
+
+            <a href="#servicos" onclick="fecharMenu()">
+                <span class="menu-item-icon">💻</span>
+                Sites e soluções digitais
+            </a>
+
+        </div>
+
+
+        <div class="menu-admin-area">
+
+            <a
+                href="#"
+                id="menuAdmin"
+                style="display:none;"
+            >
+                <span class="menu-item-icon">🔐</span>
+                Painel administrativo
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="info-bar">
+
+    <div class="info-item">
+        📍 <span>Atendimento</span> Embu Guaçu - SP
+    </div>
+
+    <div class="info-item">
+        ⚡ <span>Assistência técnica</span>
+    </div>
+
+    <div class="info-item">
+        📦 <span>Fornecimento de peças</span>
+    </div>
+
+    <div class="info-item">
+        🏪 <span>Atendimento para empresas</span>
+    </div>
+
+    <div class="info-item">
+        💻 <span>Soluções digitais</span>
+    </div>
+
+</div>
+
+
+<main id="inicio">
+
+
+<section class="hero">
+
+    <div class="hero-carousel">
+
+        <div
+            class="hero-slides"
+            id="heroSlides"
+        >
+
+            <div class="hero-box">
+
+                <div class="hero-text">
+
+                    <div class="hero-small">
+                        TECNOLOGIA & INOVAÇÃO
+                    </div>
+
+                    <h1>
+                        Tecnologia que
+                        <span>resolve.</span>
+                    </h1>
+
+                    <p>
+                        Assistência técnica, manutenção de celulares,
+                        fornecimento de peças e soluções digitais
+                        para pessoas e empresas.
+                    </p>
+
+                    <a
+                        href="#servicos"
+                        class="hero-button"
+                    >
+                        Conheça nossos serviços
+                    </a>
+
+                </div>
+
+                <div class="hero-icon">⚡</div>
+
+            </div>
+
+
+            <div class="hero-box">
+
+                <div class="hero-text">
+
+                    <div class="hero-small">
+                        FORNECIMENTO PARA ASSISTÊNCIAS
+                    </div>
+
+                    <h1>
+                        Peças para sua
+                        <span>assistência.</span>
+                    </h1>
+
+                    <p>
+                        Trabalhamos também com fornecimento de peças
+                        e componentes para profissionais e assistências
+                        técnicas.
+                    </p>
+
+                    <a
+                        href="#fornecedor"
+                        class="hero-button"
+                    >
+                        Conhecer fornecimento
+                    </a>
+
+                </div>
+
+                <div class="hero-icon">📦</div>
+
+            </div>
+
+
+            <div class="hero-box">
+
+                <div class="hero-text">
+
+                    <div class="hero-small">
+                        ASSISTÊNCIA TÉCNICA
+                    </div>
+
+                    <h1>
+                        Seu celular
+                        <span>em boas mãos.</span>
+                    </h1>
+
+                    <p>
+                        Troca de tela, bateria, conector de carga,
+                        diagnóstico e manutenção de smartphones.
+                    </p>
+
+                    <a
+                        href="#contato"
+                        class="hero-button"
+                    >
+                        Solicitar orçamento
+                    </a>
+
+                </div>
+
+                <div class="hero-icon">📱</div>
+
+            </div>
+
+
+            <div class="hero-box">
+
+                <div class="hero-text">
+
+                    <div class="hero-small">
+                        SOLUÇÕES DIGITAIS
+                    </div>
+
+                    <h1>
+                        Sua empresa
+                        <span>na internet.</span>
+                    </h1>
+
+                    <p>
+                        Criamos sites modernos, rápidos e responsivos
+                        para empresas e negócios.
+                    </p>
+
+                    <a
+                        href="#contato"
+                        class="hero-button"
+                    >
+                        Criar meu site
+                    </a>
+
+                </div>
+
+                <div class="hero-icon">💻</div>
+
+            </div>
+
+
+            <div class="hero-box">
+
+                <div class="hero-text">
+
+                    <div class="hero-small">
+                        ACOMPANHAMENTO
+                    </div>
+
+                    <h1>
+                        Acompanhe seu
+                        <span>aparelho.</span>
+                    </h1>
+
+                    <p>
+                        Veja o andamento do serviço, acompanhe o status
+                        do reparo e escolha entre retirada na loja ou
+                        entrega.
+                    </p>
+
+                    <a
+                        href="#acompanhar"
+                        class="hero-button"
+                        onclick="abrirAcompanhamento()"
+                    >
+                        Acompanhar aparelho
+                    </a>
+
+                </div>
+
+                <div class="hero-icon">🔧</div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="carousel-btn carousel-prev"
+            onclick="mudarSlide(-1)"
+        >
+            ‹
+        </button>
+
+        <button
+            class="carousel-btn carousel-next"
+            onclick="mudarSlide(1)"
+        >
+            ›
+        </button>
+
+
+        <div class="hero-dots">
+
+            <span class="hero-dot active" onclick="irParaSlide(0)"></span>
+            <span class="hero-dot" onclick="irParaSlide(1)"></span>
+            <span class="hero-dot" onclick="irParaSlide(2)"></span>
+            <span class="hero-dot" onclick="irParaSlide(3)"></span>
+            <span class="hero-dot" onclick="irParaSlide(4)"></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="categorias">
+
+    <div class="categorias-title">
+
+        <h2>Encontre o que precisa</h2>
+
+        <a href="#servicos">
+            Ver tudo →
+        </a>
+
+    </div>
+
+
+    <div class="categorias-grid">
+
+        <div
+            class="categoria"
+            onclick="mostrarAviso('Categoria: Celulares')"
+        >
+            <div class="categoria-icon">📱</div>
+            <h3>Celulares</h3>
+        </div>
+
+        <div
+            class="categoria"
+            onclick="mostrarAviso('Categoria: Baterias')"
+        >
+            <div class="categoria-icon">🔋</div>
+            <h3>Baterias</h3>
+        </div>
+
+        <div
+            class="categoria"
+            onclick="mostrarAviso('Categoria: Conectores')"
+        >
+            <div class="categoria-icon">🔌</div>
+            <h3>Conectores</h3>
+        </div>
+
+        <div
+            class="categoria"
+            onclick="mostrarAviso('Categoria: Peças')"
+        >
+            <div class="categoria-icon">📦</div>
+            <h3>Peças</h3>
+        </div>
+
+        <div
+            class="categoria"
+            onclick="mostrarAviso('Categoria: Sites')"
+        >
+            <div class="categoria-icon">💻</div>
+            <h3>Sites</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    class="fornecedor"
+    id="fornecedor"
+>
+
+    <div class="fornecedor-box">
+
+        <div>
+
+            <div class="fornecedor-tag">
+                ATENÇÃO, ASSISTÊNCIAS TÉCNICAS
+            </div>
+
+            <h2>
+                Também somos fornecedores de peças.
+            </h2>
+
+            <p>
+                A JS-INNOVATECH trabalha no fornecimento
+                de peças e componentes para assistências técnicas,
+                técnicos independentes e profissionais.
+            </p>
+
+            <div class="fornecedor-lista">
+
+                <span>📱 Peças para celulares</span>
+                <span>🔋 Baterias</span>
+                <span>🔌 Conectores</span>
+                <span>🖥️ Telas</span>
+                <span>🔧 Componentes</span>
+
+            </div>
+
+        </div>
+
+        <a
+            href="#contato"
+            class="fornecedor-btn"
+        >
+            Quero comprar peças
+        </a>
+
+    </div>
+
+</section>
+
+
+<section
+    class="destaques"
+    id="servicos"
+>
+
+    <div class="section-header">
+
+        <small>DESTAQUES</small>
+
+        <h2>Nossos serviços</h2>
+
+        <p>
+            Soluções para deixar sua tecnologia funcionando perfeitamente.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-image">📱</div>
+
+            <div class="card-content">
+
+                <small>ASSISTÊNCIA</small>
+
+                <h3>Manutenção de celulares</h3>
+
+                <p>
+                    Diagnóstico e manutenção de smartphones.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Solicitar orçamento
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">🔋</div>
+
+            <div class="card-content">
+
+                <small>BATERIA</small>
+
+                <h3>Troca de bateria</h3>
+
+                <p>
+                    Substituição de bateria para melhorar o desempenho.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Solicitar orçamento
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">🔌</div>
+
+            <div class="card-content">
+
+                <small>REPARO</small>
+
+                <h3>Conector de carga</h3>
+
+                <p>
+                    Manutenção e substituição do conector.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Solicitar orçamento
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">📦</div>
+
+            <div class="card-content">
+
+                <small>FORNECIMENTO</small>
+
+                <h3>Peças para assistências</h3>
+
+                <p>
+                    Fornecimento de peças e componentes.
+                </p>
+
+                <a
+                    href="#fornecedor"
+                    class="card-button"
+                >
+                    Quero comprar
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">💻</div>
+
+            <div class="card-content">
+
+                <small>DIGITAL</small>
+
+                <h3>Criação de sites</h3>
+
+                <p>
+                    Sites modernos, rápidos e responsivos.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Solicitar orçamento
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">🧑‍🔧</div>
+
+            <div class="card-content">
+
+                <small>PROFISSIONAIS</small>
+
+                <h3>Atendimento técnico</h3>
+
+                <p>
+                    Suporte e soluções para profissionais.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Falar conosco
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">⚙️</div>
+
+            <div class="card-content">
+
+                <small>MANUTENÇÃO</small>
+
+                <h3>Diagnóstico técnico</h3>
+
+                <p>
+                    Identificação de problemas e soluções.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Solicitar orçamento
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">🚀</div>
+
+            <div class="card-content">
+
+                <small>TECNOLOGIA</small>
+
+                <h3>Soluções digitais</h3>
+
+                <p>
+                    Soluções personalizadas para empresas.
+                </p>
+
+                <a
+                    href="#contato"
+                    class="card-button"
+                >
+                    Falar conosco
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="banner">
+
+    <div>
+
+        <h2>
+            Precisa de uma solução?
+        </h2>
+
+        <p>
+            Fale com <strong>JS-INNOVATECH</strong>
+            e solicite seu orçamento.
+        </p>
+
+    </div>
+
+    <a href="#contato">
+        Falar conosco
+    </a>
+
+</section>
+
+
+<section
+    class="sobre"
+    id="sobre"
+>
+
+    <div class="sobre-content">
+
+        <small>SOBRE A EMPRESA</small>
+
+        <h2>
+            Tecnologia feita para
+            <span>facilitar sua vida.</span>
+        </h2>
+
+        <p>
+            A JS-INNOVATECH trabalha com tecnologia,
+            assistência técnica, fornecimento de peças
+            e soluções digitais.
+            Nosso objetivo é oferecer um serviço de qualidade,
+            com atendimento rápido, transparente e profissional.
+        </p>
+
+        <p class="cnpj-sobre">
+            CNPJ:
+            <strong>66.954.475/0001-25</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+ÁREA DO CLIENTE
+===================================================== -->
+
+<section
+    class="cliente-area"
+    id="acompanhar"
+>
+
+    <div class="cliente-container">
+
+        <div class="cliente-header">
+
+            <div>
+
+                <small>ÁREA DO CLIENTE</small>
+
+                <h2>
+                    Acompanhe seu aparelho
+                </h2>
+
+                <p>
+                    Veja em qual etapa está o serviço do seu celular.
+                </p>
+
+            </div>
+
+            <button
+                class="cliente-atualizar"
+                onclick="carregarAparelhosCliente()"
+            >
+                🔄 Atualizar
+            </button>
+
+        </div>
+
+
+        <div id="listaAparelhos">
+
+            <!-- preenchido pelo JavaScript -->
+
+        </div>
+
+
+        <div class="cliente-ajuda">
+
+            <div class="ajuda-card">
+
+                <strong>
+                    📱 Precisa de informações?
+                </strong>
+
+                <p>
+                    Consulte aqui o andamento do reparo
+                    e as observações deixadas pelo técnico.
+                </p>
+
+            </div>
+
+
+            <div class="ajuda-card">
+
+                <strong>
+                    🚚 Entrega
+                </strong>
+
+                <p>
+                    Quando o aparelho estiver pronto,
+                    você poderá solicitar a entrega.
+                </p>
+
+            </div>
+
+
+            <div class="ajuda-card">
+
+                <strong>
+                    💬 Atendimento
+                </strong>
+
+                <p>
+                    Se tiver alguma dúvida sobre o serviço,
+                    fale diretamente com a assistência.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    class="contato"
+    id="contato"
+>
+
+    <div class="contato-header">
+
+        <small>FALE CONOSCO</small>
+
+        <h2>Entre em contato</h2>
+
+        <p>
+            Estamos prontos para atender você.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <div class="contact-card">
+
+            <div class="contact-icon">📱</div>
+
+            <h3>WhatsApp</h3>
+
+            <p>
+                (81) 99351-8868
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="contact-icon">📧</div>
+
+            <h3>E-mail</h3>
+
+            <p>
+                contato@js-innovatech.com
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="contact-icon">📍</div>
+
+            <h3>Atendimento</h3>
+
+            <p>
+                Embu Guaçu - SP
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="https://wa.me/5581995651948"
+        class="whatsapp"
+        target="_blank"
+        rel="noopener"
+    >
+        💬 Falar pelo WhatsApp
+    </a>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+LOGIN
+===================================================== -->
+
+<div
+    class="login-modal"
+    id="loginModal"
+>
+
+    <div class="login-box">
+
+        <button
+            class="login-close"
+            onclick="fecharLogin()"
+        >
+            ×
+        </button>
+
+        <div class="login-icon">
+            👤
+        </div>
+
+        <h2>
+            Área do cliente
+        </h2>
+
+        <p>
+            Entre ou crie sua conta.
+        </p>
+
+        <label>
+            E-mail
+        </label>
+
+        <input
+            type="email"
+            id="emailCliente"
+            placeholder="Digite seu e-mail"
+        >
+
+        <label>
+            Senha
+        </label>
+
+        <input
+            type="password"
+            id="senhaCliente"
+            placeholder="Digite sua senha"
+        >
+
+        <button
+            class="login-button"
+            id="loginButton"
+            onclick="entrarCliente()"
+        >
+            Entrar
+        </button>
+
+        <div
+            id="loginMensagem"
+            class="login-mensagem"
+        ></div>
+
+        <span
+            class="cadastro-link"
+            onclick="mostrarCadastro()"
+        >
+            Ainda não tenho cadastro
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+ADMIN
+===================================================== -->
+
+<div
+    class="admin-modal"
+    id="adminModal"
+>
+
+    <div class="admin-container">
+
+        <div class="admin-top">
+
+            <div>
+
+                <small style="color:#00aaff;">
+                    JS-INNOVATECH
+                </small>
+
+                <h2>
+                    Painel
+                    <span>Administrativo</span>
+                </h2>
+
+            </div>
+
+            <button
+                class="admin-close"
+                onclick="fecharAdmin()"
+            >
+                Fechar painel
+            </button>
+
+        </div>
+
+
+        <div class="admin-grid">
+
+            <div class="admin-stat">
+
+                <small>Status do site</small>
+
+                <strong>ONLINE</strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <small>Sistema</small>
+
+                <strong>SUPABASE</strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <small>Usuário atual</small>
+
+                <strong
+                    id="adminUsuario"
+                    style="font-size:15px;word-break:break-word;"
+                >
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <small>Função</small>
+
+                <strong>ADMIN</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- GERENCIAR APARELHO -->
+
+        <div class="admin-section">
+
+            <h3>
+                📱 Gerenciar acompanhamento de aparelho
+            </h3>
+
+            <p>
+                Cadastre ou atualize o aparelho do cliente.
+                O cliente verá essas informações na área dele.
+            </p>
+
+
+            <div class="admin-form">
+
+                <div class="campo">
+
+                    <label>
+                        E-mail do cliente
+                    </label>
+
+                    <input
+                        id="adminClienteEmail"
+                        type="email"
+                        placeholder="cliente@email.com"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Nome do cliente
+                    </label>
+
+                    <input
+                        id="adminClienteNome"
+                        type="text"
+                        placeholder="Nome do cliente"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Aparelho
+                    </label>
+
+                    <input
+                        id="adminAparelho"
+                        type="text"
+                        placeholder="Ex.: Samsung Galaxy A03"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        IMEI / identificação
+                    </label>
+
+                    <input
+                        id="adminImei"
+                        type="text"
+                        placeholder="Opcional"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Serviço
+                    </label>
+
+                    <input
+                        id="adminServico"
+                        type="text"
+                        placeholder="Ex.: Troca de tela"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="adminStatus">
+
+                        <option value="recebido">
+                            📥 Aparelho recebido
+                        </option>
+
+                        <option value="analise">
+                            🔍 Em análise
+                        </option>
+
+                        <option value="peca">
+                            📦 Aguardando peça
+                        </option>
+
+                        <option value="manutencao">
+                            🔧 Em manutenção
+                        </option>
+
+                        <option value="teste">
+                            🧪 Em testes
+                        </option>
+
+                        <option value="pronto">
+                            ✅ Pronto para retirada
+                        </option>
+
+                        <option value="entrega">
+                            🚚 Em entrega
+                        </option>
+
+                        <option value="concluido">
+                            🏁 Serviço concluído
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Previsão de conclusão
+                    </label>
+
+                    <input
+                        id="adminPrevisao"
+                        type="date"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Valor do serviço
+                    </label>
+
+                    <input
+                        id="adminValor"
+                        type="text"
+                        placeholder="R$ 0,00"
+                    >
+
+                </div>
+
+
+                <div class="campo full">
+
+                    <label>
+                        Observações para o cliente
+                    </label>
+
+                    <textarea
+                        id="adminObservacao"
+                        placeholder="Ex.: Aguardando chegada da tela. Assim que chegar iniciaremos o reparo."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="campo full">
+
+                    <button
+                        class="admin-salvar"
+                        onclick="salvarAparelhoAdmin()"
+                    >
+                        💾 Salvar acompanhamento
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LISTA -->
+
+        <div class="admin-section">
+
+            <h3>
+                📋 Aparelhos cadastrados
+            </h3>
+
+            <div id="listaAparelhosAdmin">
+
+                <!-- preenchido pelo JavaScript -->
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-section">
+
+            <h3>
+                👤 Sessão atual
+            </h3>
+
+            <div
+                class="admin-user"
+                id="adminSessao"
+            >
+                Nenhuma sessão carregada.
+            </div>
+
+        </div>
+
+
+        <div class="admin-section">
+
+            <h3>
+                🔐 Segurança
+            </h3>
+
+            <p>
+                A autenticação é feita pelo Supabase Auth.
+                Para produção, o acompanhamento dos aparelhos
+                deve ser transferido para tabelas do Supabase
+                protegidas por RLS.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div>
+
+        <div class="logo">
+            JS<span>-INNOVATECH</span>
+        </div>
+
+        <div class="footer-cnpj">
+            CNPJ: 66.954.475/0001-25
+        </div>
+
+    </div>
+
+    <p>
+        © 2026 JS-INNOVATECH.
+        Todos os direitos reservados.
+    </p>
+
+</footer>
+
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+/* =========================================================
+CONFIGURAÇÃO SUPABASE
+========================================================= */
+
+const SUPABASE_URL =
+    "https://mzvchctwnzxmpfewmgvd.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_UAcPJHHe2_PdE3sjInn1Q_SyeHLbqy";
+
+
+/*
+    COLOQUE AQUI O E-MAIL DA CONTA
+    QUE SERÁ ADMINISTRADORA.
+*/
+
+const ADMIN_EMAIL =
+    "SEU_EMAIL_ADMIN@exemplo.com";
+
+
+let supabaseClient = null;
+
+try{
+
+    if(
+        window.supabase &&
+        typeof window.supabase.createClient === "function"
+    ){
+
+        supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    }
+
+}catch(erro){
+
+    console.error(
+        "Erro ao iniciar Supabase:",
+        erro
+    );
+
+}
+
+
+/* =========================================================
+VARIÁVEIS
+========================================================= */
+
+let usuarioLogado = false;
+
+let usuarioAtual = null;
+
+let slideAtual = 0;
+
+let intervaloCarrossel = null;
+
+const totalSlides = 5;
+
+
+/* =========================================================
+ELEMENTOS
+========================================================= */
+
+const heroSlides =
+    document.getElementById("heroSlides");
+
+const heroDots =
+    document.querySelectorAll(".hero-dot");
+
+const loginModal =
+    document.getElementById("loginModal");
+
+const menuDropdown =
+    document.getElementById("menuDropdown");
+
+const contaPainel =
+    document.getElementById("contaPainel");
+
+const contaLogada =
+    document.getElementById("contaLogada");
+
+const botaoLogin =
+    document.getElementById("botaoLogin");
+
+const adminModal =
+    document.getElementById("adminModal");
+
+const menuBotao =
+    document.getElementById("menuBotao");
+
+const menuFechar =
+    document.getElementById("menuFechar");
+
+const clienteArea =
+    document.getElementById("acompanhar");
 
 
 /* =========================================================
 CARROSSEL
 ========================================================= */
 
-.carousel-btn{
-    position:absolute;
+function atualizarCarrossel(){
 
-    top:50%;
+    if(!heroSlides){
+        return;
+    }
 
-    transform:translateY(-50%);
-[...]
+    heroSlides.style.transform =
+        "translate3d(-" +
+        (slideAtual * 100) +
+        "%,0,0)";
+
+
+    heroDots.forEach(
+        function(dot,index){
+
+            dot.classList.toggle(
+                "active",
+                index === slideAtual
+            );
+
+        }
+    );
+
+}
+
+
+function mudarSlide(direcao){
+
+    slideAtual += direcao;
+
+    if(slideAtual >= totalSlides){
+        slideAtual = 0;
+    }
+
+    if(slideAtual < 0){
+        slideAtual = totalSlides - 1;
+    }
+
+    atualizarCarrossel();
+
+}
+
+
+function irParaSlide(numero){
+
+    if(
+        numero < 0 ||
+        numero >= totalSlides
+    ){
+        return;
+    }
+
+    slideAtual = numero;
+
+    atualizarCarrossel();
+
+}
+
+
+function iniciarCarrossel(){
+
+    pararCarrossel();
+
+    intervaloCarrossel =
+        setInterval(
+            function(){
+                mudarSlide(1);
+            },
+            5000
+        );
+
+}
+
+
+function pararCarrossel(){
+
+    if(intervaloCarrossel){
+
+        clearInterval(
+            intervaloCarrossel
+        );
+
+        intervaloCarrossel = null;
+
+    }
+
+}
+
+
+const carousel =
+    document.querySelector(".hero-carousel");
+
+
+if(carousel){
+
+    carousel.addEventListener(
+        "mouseenter",
+        pararCarrossel
+    );
+
+    carousel.addEventListener(
+        "mouseleave",
+        iniciarCarrossel
+    );
+
+}
+
+
+let toqueInicioX = 0;
+
+if(carousel){
+
+    carousel.addEventListener(
+        "touchstart",
+        function(event){
+
+            toqueInicioX =
+                event.changedTouches[0].screenX;
+
+        },
+        {
+            passive:true
+        }
+    );
+
+
+    carousel.addEventListener(
+        "touchend",
+        function(event){
+
+            const fim =
+                event.changedTouches[0].screenX;
+
+            const distancia =
+                fim - toqueInicioX;
+
+            if(Math.abs(distancia) > 50){
+
+                mudarSlide(
+                    distancia < 0 ? 1 : -1
+                );
+
+            }
+
+        },
+        {
+            passive:true
+        }
+    );
+
+}
+
+
+/* =========================================================
+MENU
+========================================================= */
+
+function abrirMenu(){
+
+    menuDropdown.classList.add(
+        "ativo"
+    );
+
+}
+
+
+function fecharMenu(){
+
+    menuDropdown.classList.remove(
+        "ativo"
+    );
+
+}
+
+
+menuBotao.addEventListener(
+    "click",
+    function(event){
+
+        event.stopPropagation();
+
+        menuDropdown.classList.toggle(
+            "ativo"
+        );
+
+    }
+);
+
+
+menuFechar.addEventListener(
+    "click",
+    fecharMenu
+);
+
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            menuDropdown.classList.contains("ativo") &&
+            !menuDropdown.contains(event.target) &&
+            !menuBotao.contains(event.target)
+        ){
+
+            fecharMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+TOAST
+========================================================= */
+
+let toastTimeout = null;
+
+
+function mostrarAviso(mensagem){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent =
+        mensagem;
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    if(toastTimeout){
+
+        clearTimeout(
+            toastTimeout
+        );
+
+    }
+
+
+    toastTimeout =
+        setTimeout(
+            function(){
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            3000
+        );
+
+}
+
+
+/* =========================================================
+LOGIN
+========================================================= */
+
+function abrirLogin(){
+
+    loginModal.classList.add(
+        "active"
+    );
+
+    setTimeout(
+        function(){
+
+            document
+                .getElementById("emailCliente")
+                .focus();
+
+        },
+        100
+    );
+
+}
+
+
+function fecharLogin(){
+
+    loginModal.classList.remove(
+        "active"
+    );
+
+    limparMensagem();
+
+}
+
+
+function mostrarMensagem(
+    texto,
+    tipo
+){
+
+    const mensagem =
+        document.getElementById(
+            "loginMensagem"
+        );
+
+    mensagem.textContent =
+        texto;
+
+    mensagem.className =
+        "login-mensagem " +
+        tipo;
+
+}
+
+
+function limparMensagem(){
+
+    const mensagem =
+        document.getElementById(
+            "loginMensagem"
+        );
+
+    mensagem.textContent =
+        "";
+
+    mensagem.className =
+        "login-mensagem";
+
+}
+
+
+function supabaseDisponivel(){
+
+    if(!supabaseClient){
+
+        mostrarMensagem(
+            "O sistema de login não conseguiu conectar ao Supabase.",
+            "erro"
+        );
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+/* =========================================================
+ENTRAR
+========================================================= */
+
+async function entrarCliente(){
+
+    if(!supabaseDisponivel()){
+        return;
+    }
+
+
+    const email =
+        document
+            .getElementById("emailCliente")
+            .value
+            .trim();
+
+
+    const senha =
+        document
+            .getElementById("senhaCliente")
+            .value;
+
+
+    if(!email){
+
+        mostrarMensagem(
+            "Digite seu e-mail.",
+            "erro"
+        );
+
+        return;
+
+    }
+
+
+    if(!senha){
+
+        mostrarMensagem(
+            "Digite sua senha.",
+            "erro"
+        );
+
+        return;
+
+    }
+
+
+    const botao =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    botao.disabled = true;
+
+    botao.textContent =
+        "Entrando...";
+
+
+    try{
+
+        const resultado =
+            await supabaseClient.auth.signInWithPassword({
+
+                email:email,
+
+                password:senha
+
+            });
+
+
+        if(resultado.error){
+            throw resultado.error;
+        }
+
+
+        usuarioAtual =
+            resultado.data.user;
+
+        usuarioLogado = true;
+
+
+        atualizarConta(
+            usuarioAtual
+        );
+
+        atualizarInterfaceLogin();
+
+        atualizarMenuUsuario(
+            usuarioAtual
+        );
+
+        limparCamposLogin();
+
+        fecharLogin();
+
+
+        mostrarAviso(
+            "Login realizado com sucesso."
+        );
+
+
+        verificarAdministrador(
+            usuarioAtual
+        );
+
+
+        abrirAcompanhamento();
+
+
+    }catch(erro){
+
+        console.error(
+            erro
+        );
+
+
+        mostrarMensagem(
+            "E-mail ou senha incorretos.",
+            "erro"
+        );
+
+    }finally{
+
+        botao.disabled = false;
+
+        botao.textContent =
+            "Entrar";
+
+    }
+
+}
+
+
+/* =========================================================
+CADASTRO
+========================================================= */
+
+async function mostrarCadastro(){
+
+    if(!supabaseDisponivel()){
+        return;
+    }
+
+
+    const email =
+        document
+            .getElementById("emailCliente")
+            .value
+            .trim();
+
+
+    const senha =
+        document
+            .getElementById("senhaCliente")
+            .value;
+
+
+    if(!email){
+
+        mostrarMensagem(
+            "Digite seu e-mail para criar a conta.",
+            "erro"
+        );
+
+        return;
+
+    }
+
+
+    if(senha.length < 6){
+
+        mostrarMensagem(
+            "A senha precisa ter pelo menos 6 caracteres.",
+            "erro"
+        );
+
+        return;
+
+    }
+
+
+    const link =
+        document.querySelector(
+            ".cadastro-link"
+        );
+
+
+    link.textContent =
+        "Criando conta...";
+
+
+    try{
+
+        const resultado =
+            await supabaseClient.auth.signUp({
+
+                email:email,
+
+                password:senha
+
+            });
+
+
+        if(resultado.error){
+            throw resultado.error;
+        }
+
+
+        if(
+            resultado.data.session &&
+            resultado.data.user
+        ){
+
+            usuarioAtual =
+                resultado.data.user;
+
+            usuarioLogado = true;
+
+            atualizarInterfaceLogin();
+
+            atualizarConta(
+                usuarioAtual
+            );
+
+            atualizarMenuUsuario(
+                usuarioAtual
+            );
+
+            fecharLogin();
+
+            abrirAcompanhamento();
+
+            mostrarAviso(
+                "Conta criada com sucesso."
+            );
+
+        }else{
+
+            mostrarMensagem(
+                "Conta criada! Verifique seu e-mail para confirmar.",
+                "sucesso"
+            );
+
+        }
+
+
+    }catch(erro){
+
+        mostrarMensagem(
+            erro.message ||
+            "Não foi possível criar a conta.",
+            "erro"
+        );
+
+    }finally{
+
+        link.textContent =
+            "Ainda não tenho cadastro";
+
+    }
+
+}
+
+
+/* =========================================================
+CONTA
+========================================================= */
+
+function atualizarConta(user){
+
+    if(!user){
+        return;
+    }
+
+    document
+        .getElementById("emailUsuario")
+        .textContent =
+        user.email || "—";
+
+}
+
+
+function atualizarMenuUsuario(user){
+
+    const saudacao =
+        document.getElementById(
+            "menuSaudacao"
+        );
+
+    const texto =
+        document.getElementById(
+            "menuContaTexto"
+        );
+
+    const botoes =
+        document.getElementById(
+            "menuContaBotoes"
+        );
+
+
+    if(user){
+
+        saudacao.textContent =
+            "Olá!";
+
+        texto.textContent =
+            user.email || "";
+
+        botoes.style.display =
+            "none";
+
+    }else{
+
+        saudacao.textContent =
+            "Bem-vindo";
+
+        texto.textContent =
+            "Entre na sua conta para acessar seus serviços.";
+
+        botoes.style.display =
+            "flex";
+
+    }
+
+}
+
+
+function atualizarInterfaceLogin(){
+
+    if(usuarioLogado){
+
+        botaoLogin.style.display =
+            "none";
+
+        contaLogada.classList.add(
+            "ativa"
+        );
+
+        clienteArea.classList.add(
+            "ativa"
+        );
+
+        carregarAparelhosCliente();
+
+    }else{
+
+        botaoLogin.style.display =
+            "flex";
+
+        contaLogada.classList.remove(
+            "ativa"
+        );
+
+        clienteArea.classList.remove(
+            "ativa"
+        );
+
+    }
+
+
+    atualizarMenuUsuario(
+        usuarioAtual
+    );
+
+}
+
+
+/* =========================================================
+VERIFICAR USUÁRIO
+========================================================= */
+
+async function verificarUsuario(){
+
+    if(!supabaseClient){
+        return;
+    }
+
+
+    try{
+
+        const resultado =
+            await supabaseClient.auth.getUser();
+
+
+        if(
+            resultado.data &&
+            resultado.data.user
+        ){
+
+            usuarioAtual =
+                resultado.data.user;
+
+            usuarioLogado = true;
+
+            atualizarConta(
+                usuarioAtual
+            );
+
+            atualizarInterfaceLogin();
+
+            verificarAdministrador(
+                usuarioAtual
+            );
+
+        }else{
+
+            usuarioAtual = null;
+
+            usuarioLogado = false;
+
+            atualizarInterfaceLogin();
+
+        }
+
+    }catch(erro){
+
+        console.warn(
+            "Nenhum usuário logado."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+AUTH STATE
+========================================================= */
+
+if(supabaseClient){
+
+    supabaseClient.auth.onAuthStateChange(
+        function(event,session){
+
+            if(
+                session &&
+                session.user
+            ){
+
+                usuarioAtual =
+                    session.user;
+
+                usuarioLogado = true;
+
+                atualizarConta(
+                    session.user
+                );
+
+                atualizarInterfaceLogin();
+
+                verificarAdministrador(
+                    session.user
+                );
+
+            }else{
+
+                usuarioAtual = null;
+
+                usuarioLogado = false;
+
+                atualizarInterfaceLogin();
+
+                esconderAdmin();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+MINHA CONTA
+========================================================= */
+
+function abrirConta(){
+
+    if(!usuarioLogado){
+
+        abrirLogin();
+
+        return;
+
+    }
+
+    contaPainel.classList.toggle(
+        "ativo"
+    );
+
+}
+
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            usuarioLogado &&
+            !contaLogada.contains(event.target)
+        ){
+
+            contaPainel.classList.remove(
+                "ativo"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+SAIR
+========================================================= */
+
+async function sairDaConta(){
+
+    if(!supabaseClient){
+        return;
+    }
+
+
+    try{
+
+        await supabaseClient.auth.signOut();
+
+        usuarioLogado = false;
+
+        usuarioAtual = null;
+
+        contaPainel.classList.remove(
+            "ativo"
+        );
+
+        atualizarInterfaceLogin();
+
+        esconderAdmin();
+
+        mostrarAviso(
+            "Você saiu da sua conta."
+        );
+
+    }catch(erro){
+
+        mostrarAviso(
+            "Não foi possível sair da conta."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+ABRIR ACOMPANHAMENTO
+========================================================= */
+
+function abrirAcompanhamento(){
+
+    if(!usuarioLogado){
+
+        abrirLogin();
+
+        mostrarAviso(
+            "Entre na sua conta para acompanhar seu aparelho."
+        );
+
+        return;
+
+    }
+
+
+    clienteArea.classList.add(
+        "ativa"
+    );
+
+
+    setTimeout(
+        function(){
+
+            clienteArea.scrollIntoView({
+                behavior:"smooth"
+            });
+
+        },
+        100
+    );
+
+
+    carregarAparelhosCliente();
+
+}
+
+
+/* =========================================================
+DADOS DOS APARELHOS
+========================================================= */
+
+/*
+    ESTA VERSÃO USA LOCALSTORAGE PARA TESTE.
+
+    Quando você cadastrar um aparelho pelo painel,
+    ele ficará salvo neste navegador.
+
+    Depois podemos trocar isso por Supabase Database.
+*/
+
+function obterAparelhos(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem(
+                "js_innovatech_aparelhos"
+            )
+        ) || [];
+
+    }catch(erro){
+
+        return [];
+
+    }
+
+}
+
+
+function salvarListaAparelhos(lista){
+
+    localStorage.setItem(
+        "js_innovatech_aparelhos",
+        JSON.stringify(lista)
+    );
+
+}
+
+
+/* =========================================================
+STATUS
+========================================================= */
+
+const etapasStatus = [
+
+    {
+        id:"recebido",
+        nome:"Recebido",
+        icone:"📥"
+    },
+
+    {
+        id:"analise",
+        nome:"Em análise",
+        icone:"🔍"
+    },
+
+    {
+        id:"peca",
+        nome:"Aguardando peça",
+        icone:"📦"
+    },
+
+    {
+        id:"manutencao",
+        nome:"Em manutenção",
+        icone:"🔧"
+    },
+
+    {
+        id:"teste",
+        nome:"Em testes",
+        icone:"🧪"
+    },
+
+    {
+        id:"pronto",
+        nome:"Pronto",
+        icone:"✅"
+    },
+
+    {
+        id:"entrega",
+        nome:"Entrega",
+        icone:"🚚"
+    },
+
+    {
+        id:"concluido",
+        nome:"Concluído",
+        icone:"🏁"
+    }
+
+];
+
+
+function nomeStatus(status){
+
+    const item =
+        etapasStatus.find(
+            function(etapa){
+                return etapa.id === status;
+            }
+        );
+
+    return item
+        ? item.nome
+        : status;
+
+}
+
+
+function indiceStatus(status){
+
+    return etapasStatus.findIndex(
+        function(etapa){
+            return etapa.id === status;
+        }
+    );
+
+}
+
+
+/* =========================================================
+CARREGAR APARELHOS CLIENTE
+========================================================= */
+
+function carregarAparelhosCliente(){
+
+    const container =
+        document.getElementById(
+            "listaAparelhos"
+        );
+
+
+    if(!container){
+        return;
+    }
+
+
+    if(!usuarioLogado){
+
+        container.innerHTML = `
+            <div class="sem-aparelho">
+                <div class="icone">🔐</div>
+                <h3>Faça login para acompanhar</h3>
+                <p>
+                    Entre na sua conta para visualizar seus aparelhos.
+                </p>
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    const email =
+        String(
+            usuarioAtual &&
+            usuarioAtual.email
+                ? usuarioAtual.email
+                : ""
+        )
+        .trim()
+        .toLowerCase();
+
+
+    const aparelhos =
+        obterAparelhos().filter(
+            function(aparelho){
+
+                return String(
+                    aparelho.clienteEmail || ""
+                )
+                .trim()
+                .toLowerCase() === email;
+
+            }
+        );
+
+
+    if(!aparelhos.length){
+
+        container.innerHTML = `
+            <div class="sem-aparelho">
+                <div class="icone">📱</div>
+                <h3>Nenhum aparelho cadastrado</h3>
+                <p>
+                    Quando seu aparelho for registrado pela
+                    JS-INNOVATECH, ele aparecerá aqui.
+                </p>
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        aparelhos
+            .map(
+                criarCardAparelho
+            )
+            .join("");
+
+}
+
+
+/* =========================================================
+CARD DO APARELHO
+========================================================= */
+
+function criarCardAparelho(aparelho){
+
+    const indiceAtual =
+        indiceStatus(
+            aparelho.status
+        );
+
+
+    const pronto =
+        aparelho.status === "pronto" ||
+        aparelho.status === "entrega" ||
+        aparelho.status === "concluido";
+
+
+    const valor =
+        aparelho.valor ||
+        "A definir";
+
+
+    const previsao =
+        aparelho.previsao
+            ? formatarData(aparelho.previsao)
+            : "A definir";
+
+
+    return `
+
+        <div
+            class="aparelho-card"
+            data-id="${aparelho.id}"
+        >
+
+            <div class="aparelho-topo">
+
+                <div class="aparelho-identificacao">
+
+                    <div class="aparelho-icone">
+                        📱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            ${escaparHTML(aparelho.aparelho)}
+                        </h3>
+
+                        <p>
+                            ${escaparHTML(aparelho.servico || "Serviço técnico")}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-badge">
+                    ${nomeStatus(aparelho.status)}
+                </div>
+
+            </div>
+
+
+            <div class="aparelho-info">
+
+                <div class="info-card">
+
+                    <small>
+                        Ordem / identificação
+                    </small>
+
+                    <strong>
+                        ${escaparHTML(aparelho.id)}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        IMEI
+                    </small>
+
+                    <strong>
+                        ${escaparHTML(aparelho.imei || "Não informado")}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        Previsão
+                    </small>
+
+                    <strong>
+                        ${previsao}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        Valor
+                    </small>
+
+                    <strong>
+                        ${escaparHTML(valor)}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <h4>
+                    📍 Andamento do serviço
+                </h4>
+
+                <div class="timeline-list">
+
+                    ${etapasStatus.map(
+                        function(etapa,index){
+
+                            let classe = "";
+
+                            if(index < indiceAtual){
+                                classe = "concluido";
+                            }
+
+                            if(index === indiceAtual){
+                                classe = "ativo";
+                            }
+
+                            return `
+
+                                <div class="timeline-step ${classe}">
+
+                                    <div class="timeline-dot">
+                                        ${etapa.icone}
+                                    </div>
+
+                                    <span>
+                                        ${etapa.nome}
+                                    </span>
+
+                                </div>
+
+                            `;
+
+                        }
+                    ).join("")}
+
+                </div>
+
+            </div>
+
+
+            <div class="aparelho-observacao">
+
+                <strong>
+                    📝 Observações da assistência
+                </strong>
+
+                <p>
+                    ${escaparHTML(
+                        aparelho.observacao ||
+                        "Nenhuma observação adicionada."
+                    )}
+                </p>
+
+            </div>
+
+
+            ${
+                pronto
+                ? criarOpcoesEntrega(aparelho)
+                : `
+                    <div class="entrega-area">
+
+                        <h4>
+                            ⏳ Retirada e entrega
+                        </h4>
+
+                        <p>
+                            As opções de retirada ou entrega
+                            ficarão disponíveis quando o aparelho
+                            estiver pronto.
+                        </p>
+
+                    </div>
+                `
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+OPÇÕES DE ENTREGA
+========================================================= */
+
+function criarOpcoesEntrega(aparelho){
+
+    const escolha =
+        aparelho.entregaOpcao || "";
+
+
+    return `
+
+        <div class="entrega-area">
+
+            <h4>
+                🎉 Seu aparelho está pronto!
+            </h4>
+
+            <p>
+                Escolha como deseja receber seu aparelho.
+            </p>
+
+
+            <div class="entrega-opcoes">
+
+                <button
+                    class="entrega-btn ${
+                        escolha === "loja"
+                            ? "selecionado"
+                            : ""
+                    }"
+                    onclick="selecionarEntrega('${aparelho.id}','loja')"
+                >
+                    🏪 Retirar na loja
+                </button>
+
+
+                <button
+                    class="entrega-btn ${
+                        escolha === "entrega"
+                            ? "selecionado"
+                            : ""
+                    }"
+                    onclick="selecionarEntrega('${aparelho.id}','entrega')"
+                >
+                    🚚 Fazer entrega
+                </button>
+
+            </div>
+
+
+            ${
+                escolha
+                ? `
+                    <p style="margin-top:15px;color:#65e69a;">
+                        ✓ Opção selecionada:
+                        ${
+                            escolha === "loja"
+                                ? "Retirada na loja"
+                                : "Entrega"
+                        }
+                    </p>
+                `
+                : ""
+            }
+
+
+            ${
+                escolha
+                ? ""
+                : `
+                    <button
+                        class="entrega-confirmar"
+                        style="display:none;"
+                    >
+                        Confirmar
+                    </button>
+                `
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+SELECIONAR ENTREGA
+========================================================= */
+
+function selecionarEntrega(
+    aparelhoId,
+    opcao
+){
+
+    const aparelhos =
+        obterAparelhos();
+
+
+    const aparelho =
+        aparelhos.find(
+            function(item){
+                return item.id === aparelhoId;
+            }
+        );
+
+
+    if(!aparelho){
+        return;
+    }
+
+
+    aparelho.entregaOpcao =
+        opcao;
+
+
+    aparelho.entregaStatus =
+        "solicitado";
+
+
+    salvarListaAparelhos(
+        aparelhos
+    );
+
+
+    carregarAparelhosCliente();
+
+
+    mostrarAviso(
+        opcao === "loja"
+            ? "Retirada na loja selecionada."
+            : "Entrega solicitada."
+    );
+
+}
+
+
+/* =========================================================
+ADMIN — SALVAR APARELHO
+========================================================= */
+
+function salvarAparelhoAdmin(){
+
+    const clienteEmail =
+        document
+            .getElementById("adminClienteEmail")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    const clienteNome =
+        document
+            .getElementById("adminClienteNome")
+            .value
+            .trim();
+
+
+    const aparelho =
+        document
+            .getElementById("adminAparelho")
+            .value
+            .trim();
+
+
+    const imei =
+        document
+            .getElementById("adminImei")
+            .value
+            .trim();
+
+
+    const servico =
+        document
+            .getElementById("adminServico")
+            .value
+            .trim();
+
+
+    const status =
+        document
+            .getElementById("adminStatus")
+            .value;
+
+
+    const previsao =
+        document
+            .getElementById("adminPrevisao")
+            .value;
+
+
+    const valor =
+        document
+            .getElementById("adminValor")
+            .value
+            .trim();
+
+
+    const observacao =
+        document
+            .getElementById("adminObservacao")
+            .value
+            .trim();
+
+
+    if(!clienteEmail){
+
+        mostrarAviso(
+            "Informe o e-mail do cliente."
+        );
+
+        return;
+
+    }
+
+
+    if(!aparelho){
+
+        mostrarAviso(
+            "Informe o aparelho."
+        );
+
+        return;
+
+    }
+
+
+    if(!servico){
+
+        mostrarAviso(
+            "Informe o serviço."
+        );
+
+        return;
+
+    }
+
+
+    const lista =
+        obterAparelhos();
+
+
+    const novoAparelho = {
+
+        id:
+            "OS-" +
+            Date.now(),
+
+        clienteEmail:
+
+            clienteEmail,
+
+        clienteNome:
+
+            clienteNome,
+
+        aparelho:
+
+            aparelho,
+
+        imei:
+
+            imei,
+
+        servico:
+
+            servico,
+
+        status:
+
+            status,
+
+        previsao:
+
+            previsao,
+
+        valor:
+
+            valor,
+
+        observacao:
+
+            observacao,
+
+        entregaOpcao:
+
+            "",
+
+        entregaStatus:
+
+            "",
+
+        criadoEm:
+
+            new Date().toISOString()
+
+    };
+
+
+    lista.push(
+        novoAparelho
+    );
+
+
+    salvarListaAparelhos(
+        lista
+    );
+
+
+    limparFormularioAdmin();
+
+    carregarAparelhosAdmin();
+
+
+    mostrarAviso(
+        "Aparelho cadastrado com sucesso."
+    );
+
+}
+
+
+/* =========================================================
+ADMIN — LISTA
+========================================================= */
+
+function carregarAparelhosAdmin(){
+
+    const container =
+        document.getElementById(
+            "listaAparelhosAdmin"
+        );
+
+
+    if(!container){
+        return;
+    }
+
+
+    const lista =
+        obterAparelhos();
+
+
+    if(!lista.length){
+
+        container.innerHTML = `
+            <div class="aparelho-admin">
+                Nenhum aparelho cadastrado.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        lista
+            .map(
+                function(aparelho){
+
+                    return `
+
+                        <div class="aparelho-admin">
+
+                            <div class="aparelho-admin-header">
+
+                                <div>
+
+                                    <strong>
+                                        ${escaparHTML(aparelho.aparelho)}
+                                    </strong>
+
+                                    <p>
+                                        ${escaparHTML(aparelho.clienteEmail)}
+                                    </p>
+
+                                </div>
+
+                                <span class="admin-status">
+                                    ${nomeStatus(aparelho.status)}
+                                </span>
+
+                            </div>
+
+
+                            <p>
+                                Serviço:
+                                ${escaparHTML(aparelho.servico)}
+                            </p>
+
+
+                            ${
+                                aparelho.entregaOpcao
+                                ? `
+                                    <p style="color:#65e69a;margin-top:8px;">
+                                        ${
+                                            aparelho.entregaOpcao === "loja"
+                                                ? "🏪 Cliente escolheu retirada na loja"
+                                                : "🚚 Cliente solicitou entrega"
+                                        }
+                                    </p>
+                                `
+                                : ""
+                            }
+
+
+                            <div
+                                class="admin-actions"
+                            >
+
+                                <button
+                                    class="admin-action"
+                                    onclick="editarStatusAdmin('${aparelho.id}')"
+                                >
+                                    🔧 Atualizar status
+                                </button>
+
+
+                                <button
+                                    class="admin-action"
+                                    onclick="excluirAparelhoAdmin('${aparelho.id}')"
+                                >
+                                    🗑️ Excluir
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            )
+            .join("");
+
+}
+
+
+/* =========================================================
+ADMIN — ATUALIZAR STATUS
+========================================================= */
+
+function editarStatusAdmin(id){
+
+    const lista =
+        obterAparelhos();
+
+
+    const aparelho =
+        lista.find(
+            function(item){
+                return item.id === id;
+            }
+        );
+
+
+    if(!aparelho){
+        return;
+    }
+
+
+    const novoStatus =
+        prompt(
+            "Digite o novo status:\n\n" +
+            "recebido\n" +
+            "analise\n" +
+            "peca\n" +
+            "manutencao\n" +
+            "teste\n" +
+            "pronto\n" +
+            "entrega\n" +
+            "concluido",
+            aparelho.status
+        );
+
+
+    if(!novoStatus){
+        return;
+    }
+
+
+    const statusLimpo =
+        novoStatus
+            .trim()
+            .toLowerCase();
+
+
+    if(
+        !etapasStatus.some(
+            function(etapa){
+                return etapa.id === statusLimpo;
+            }
+        )
+    ){
+
+        mostrarAviso(
+            "Status inválido."
+        );
+
+        return;
+
+    }
+
+
+    aparelho.status =
+        statusLimpo;
+
+
+    salvarListaAparelhos(
+        lista
+    );
+
+
+    carregarAparelhosAdmin();
+
+    carregarAparelhosCliente();
+
+
+    mostrarAviso(
+        "Status atualizado."
+    );
+
+}
+
+
+/* =========================================================
+ADMIN — EXCLUIR
+========================================================= */
+
+function excluirAparelhoAdmin(id){
+
+    if(
+        !confirm(
+            "Deseja realmente excluir este acompanhamento?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    const lista =
+        obterAparelhos()
+            .filter(
+                function(aparelho){
+                    return aparelho.id !== id;
+                }
+            );
+
+
+    salvarListaAparelhos(
+        lista
+    );
+
+
+    carregarAparelhosAdmin();
+
+    carregarAparelhosCliente();
+
+
+    mostrarAviso(
+        "Aparelho removido."
+    );
+
+}
+
+
+/* =========================================================
+LIMPAR FORM
+========================================================= */
+
+function limparFormularioAdmin(){
+
+    document
+        .getElementById("adminClienteEmail")
+        .value = "";
+
+    document
+        .getElementById("adminClienteNome")
+        .value = "";
+
+    document
+        .getElementById("adminAparelho")
+        .value = "";
+
+    document
+        .getElementById("adminImei")
+        .value = "";
+
+    document
+        .getElementById("adminServico")
+        .value = "";
+
+    document
+        .getElementById("adminPrevisao")
+        .value = "";
+
+    document
+        .getElementById("adminValor")
+        .value = "";
+
+    document
+        .getElementById("adminObservacao")
+        .value = "";
+
+}
+
+
+/* =========================================================
+ADMIN
+========================================================= */
+
+function verificarAdministrador(user){
+
+    if(!user){
+
+        esconderAdmin();
+
+        return;
+
+    }
+
+
+    const email =
+        String(
+            user.email || ""
+        )
+        .trim()
+        .toLowerCase();
+
+
+    const adminEmail =
+        String(
+            ADMIN_EMAIL || ""
+        )
+        .trim()
+        .toLowerCase();
+
+
+    if(
+        adminEmail &&
+        adminEmail !==
+            "seu_email_admin@exemplo.com" &&
+        email === adminEmail
+    ){
+
+        mostrarAdmin(
+            user
+        );
+
+    }else{
+
+        esconderAdmin();
+
+    }
+
+}
+
+
+function mostrarAdmin(user){
+
+    const menuAdmin =
+        document.getElementById(
+            "menuAdmin"
+        );
+
+
+    menuAdmin.style.display =
+        "flex";
+
+
+    menuAdmin.onclick =
+        function(event){
+
+            event.preventDefault();
+
+            fecharMenu();
+
+            abrirAdmin();
+
+        };
+
+
+    document
+        .getElementById("adminUsuario")
+        .textContent =
+        user.email || "Admin";
+
+
+    document
+        .getElementById("adminSessao")
+        .textContent =
+        "Administrador conectado: " +
+        (user.email || "—");
+
+
+    carregarAparelhosAdmin();
+
+}
+
+
+function esconderAdmin(){
+
+    const menuAdmin =
+        document.getElementById(
+            "menuAdmin"
+        );
+
+
+    menuAdmin.style.display =
+        "none";
+
+
+    adminModal.classList.remove(
+        "active"
+    );
+
+}
+
+
+function abrirAdmin(){
+
+    if(!usuarioLogado){
+
+        abrirLogin();
+
+        return;
+
+    }
+
+
+    const email =
+        String(
+            usuarioAtual &&
+            usuarioAtual.email
+                ? usuarioAtual.email
+                : ""
+        )
+        .trim()
+        .toLowerCase();
+
+
+    const adminEmail =
+        String(
+            ADMIN_EMAIL
+        )
+        .trim()
+        .toLowerCase();
+
+
+    if(
+        !adminEmail ||
+        adminEmail ===
+            "seu_email_admin@exemplo.com" ||
+        email !== adminEmail
+    ){
+
+        mostrarAviso(
+            "Você não possui acesso administrativo."
+        );
+
+        return;
+
+    }
+
+
+    carregarAparelhosAdmin();
+
+
+    adminModal.classList.add(
+        "active"
+    );
+
+}
+
+
+function fecharAdmin(){
+
+    adminModal.classList.remove(
+        "active"
+    );
+
+}
+
+
+/* =========================================================
+PESQUISA
+========================================================= */
+
+function pesquisar(){
+
+    const campo =
+        document.getElementById(
+            "campoPesquisa"
+        );
+
+
+    const texto =
+        campo.value
+            .trim()
+            .toLowerCase();
+
+
+    if(!texto){
+
+        mostrarAviso(
+            "Digite o que você está procurando."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        texto.includes("aparelho") ||
+        texto.includes("ordem") ||
+        texto.includes("reparo") ||
+        texto.includes("conserto") ||
+        texto.includes("andamento") ||
+        texto.includes("status")
+    ){
+
+        abrirAcompanhamento();
+
+        return;
+
+    }
+
+
+    if(
+        texto.includes("peça") ||
+        texto.includes("peca") ||
+        texto.includes("bateria") ||
+        texto.includes("tela") ||
+        texto.includes("conector") ||
+        texto.includes("fornecedor")
+    ){
+
+        document
+            .getElementById("fornecedor")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("servicos")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    mostrarAviso(
+        "Confira nossos serviços."
+    );
+
+}
+
+
+document
+    .getElementById("campoPesquisa")
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Enter"){
+
+                event.preventDefault();
+
+                pesquisar();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+LOGIN ENTER
+========================================================= */
+
+document
+    .getElementById("senhaCliente")
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Enter"){
+
+                event.preventDefault();
+
+                entrarCliente();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+FECHAR LOGIN
+========================================================= */
+
+loginModal.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            loginModal
+        ){
+
+            fecharLogin();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key !== "Escape"){
+            return;
+        }
+
+        loginModal.classList.remove(
+            "active"
+        );
+
+        contaPainel.classList.remove(
+            "ativo"
+        );
+
+        menuDropdown.classList.remove(
+            "ativo"
+        );
+
+        adminModal.classList.remove(
+            "active"
+        );
+
+    }
+);
+
+
+/* =========================================================
+FORMATAR DATA
+========================================================= */
+
+function formatarData(data){
+
+    if(!data){
+        return "A definir";
+    }
+
+
+    const partes =
+        data.split("-");
+
+
+    if(partes.length !== 3){
+        return data;
+    }
+
+
+    return (
+        partes[2] +
+        "/" +
+        partes[1] +
+        "/" +
+        partes[0]
+    );
+
+}
+
+
+/* =========================================================
+ESCAPAR HTML
+========================================================= */
+
+function escaparHTML(valor){
+
+    return String(
+        valor || ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+INICIALIZAÇÃO
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        atualizarCarrossel();
+
+        iniciarCarrossel();
+
+        atualizarMenuUsuario(
+            null
+        );
+
+        carregarAparelhosAdmin();
+
+        verificarUsuario();
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
